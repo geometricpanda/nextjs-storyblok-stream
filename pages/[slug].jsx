@@ -1,14 +1,23 @@
 import Head from 'next/head'
 import {getStoryblokApi, StoryblokComponent, useStoryblokState} from "@storyblok/react";
 
-export const getStaticProps = async ({params}) => {
+export const getStaticProps = async ({params, preview}) => {
+
     const slug = params.slug.toString();
+
+    const sbParams = {
+        version: preview ? 'draft' : 'published',
+    }
+
+
     const storyblokApi = getStoryblokApi();
-    const {data} = await storyblokApi.getStory(slug);
+    const {data} = await storyblokApi.getStory(slug, sbParams);
+
     return {
+        notFound: !preview && !data.story,
         props: {
-            initialStory: data ? data.story : false,
-            preview: true,
+            initialStory: data.story,
+            preview: preview || false,
         },
         revalidate: 3600
     }
