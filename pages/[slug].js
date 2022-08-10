@@ -1,8 +1,8 @@
 import Head from 'next/head'
 import {getStoryblokApi, StoryblokComponent, useStoryblokState} from "@storyblok/react";
 
-export const getStaticProps = async () => {
-    const slug = 'home'
+export const getStaticProps = async ({params}) => {
+    const slug = params.slug.toString();
     const storyblokApi = getStoryblokApi();
     const {data} = await storyblokApi.getStory(slug);
     return {
@@ -10,6 +10,17 @@ export const getStaticProps = async () => {
             initialStory: data ? data.story : false,
         },
         revalidate: 3600
+    }
+}
+
+export const getStaticPaths = async () => {
+    const storyblokApi = getStoryblokApi();
+    const links = await storyblokApi.getAll('cdn/links', {preview: true})
+    const paths = links.map(({slug}) => ({params: {slug}}));
+
+    return {
+        paths,
+        fallback: false,
     }
 }
 
@@ -24,7 +35,7 @@ const Home = ({initialStory}) => {
                 <link rel="icon" href="/favicon.ico"/>
             </Head>
             <StoryblokComponent
-                blok={story.content} />
+                blok={story.content}/>
         </>
     )
 }
