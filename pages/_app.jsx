@@ -2,6 +2,7 @@ import '../styles/globals.css'
 import {apiPlugin, storyblokInit} from "@storyblok/react";
 import {JumbotronBlok, PageBlok} from "../bloks";
 import {LinkBlok} from "../bloks/link-blok";
+import {Bridge} from "../components/bridge/bridge";
 
 storyblokInit({
     accessToken: "Cxz08fdIQQFvtN3sLvBmbAtt",
@@ -14,8 +15,11 @@ storyblokInit({
 });
 
 
-function MyApp({Component, pageProps}) {
-    return <Component {...pageProps} />
-}
+const MyApp = ({Component, pageProps, router}) => (
+    <>
+        {router.isPreview && (<Bridge/>)}
+        <Component {...pageProps} />
+    </>
+)
 
 export default MyApp
