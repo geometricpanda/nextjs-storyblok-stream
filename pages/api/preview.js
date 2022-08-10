@@ -7,12 +7,6 @@ const handler = async (req, res) => {
     const storyBlokToken = req.query['_storyblok_tk[token]'];
     const storyBlokSpaceId = req.query['_storyblok_tk[space_id]'];
     const storyBlokTimestamp = req.query['_storyblok_tk[timestamp]'];
-    const storyBlokPublished = req.query['_storyblok_published'];
-
-    if (!storyBlokPublished) {
-        res.clearPreviewData();
-        return res.redirect(`/${slug}`)
-    }
 
     if (!storyBlokToken || !storyBlokSpaceId || !storyBlokTimestamp) {
         return res.status(400)

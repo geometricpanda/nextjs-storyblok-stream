@@ -9,7 +9,6 @@ export const getStaticProps = async ({params, preview}) => {
         version: preview ? 'draft' : 'published',
     }
 
-
     const storyblokApi = getStoryblokApi();
     const {data} = await storyblokApi.getStory(slug, sbParams);
 

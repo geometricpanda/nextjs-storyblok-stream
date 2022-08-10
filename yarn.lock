@@ -154,19 +154,26 @@
   resolved "https://registry.yarnpkg.com/@rushstack/eslint-patch/-/eslint-patch-1.1.4.tgz#0c8b74c50f29ee44f423f7416829c0bf8bb5eb27"
   integrity sha512-LwzQKA4vzIct1zNZzBmRKI9QuNpLgTQMEjsQLf3BXuGYb3QPTP4Yjf6mkdX+X1mYttZ808QpOwAzZjv28kq7DA==
 
-"@storyblok/js@^1.7.1":
+"@storyblok/js@1.7.0":
+  version "1.7.0"
+  resolved "https://registry.yarnpkg.com/@storyblok/js/-/js-1.7.0.tgz#70ab9da42421723fed141d3cc58924658b5fb77a"
+  integrity sha512-ZlI/712YkaTcJBPECyGctRaFUiWUtbUSlrVrDcoHPKv2bbPTSfvdu4w31VWfsDd7DOz76KHOUpOPdpFZmMqYPg==
+  dependencies:
+    storyblok-js-client "^4.5.6"
+
+"@storyblok/js@^1.7.0":
   version "1.7.1"
   resolved "https://registry.yarnpkg.com/@storyblok/js/-/js-1.7.1.tgz#f19eb4e1037b6deda0a134c3bc24542f84a2a0b3"
   integrity sha512-5iipQw02C5ntwZnR4RnUPhjM+w/kI+Jg02u4enYMmYX5JdwnXx0xC4uk6716JszSY1NY9/8pqJd7WweNz0AXtw==
   dependencies:
     storyblok-js-client "^4.5.6"
 
-"@storyblok/react@^1.1.3":
-  version "1.1.3"
-  resolved "https://registry.yarnpkg.com/@storyblok/react/-/react-1.1.3.tgz#d514165b809146cd2a25087e0248bc76f3c891b9"
-  integrity sha512-IHKhCbDxsUWoxl6xEyWRt7y+DCpWaUmH/dAPK9EsLHvXXc3V7y5A+moCsy6pPss/xy8QBu1iG0lH/cdjA3WrIg==
+"@storyblok/react@1.1.1":
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/@storyblok/react/-/react-1.1.1.tgz#2cb61f3c50556a0305df5daf8a4ca53d131afb07"
+  integrity sha512-mxYFw73KILz+McasdV6TkSkv5diiOm2yIo2Luhqph7yt7awVJE+wS2+93xCSmGrh4+OStnBcZmq1I97f8ZUNMg==
   dependencies:
-    "@storyblok/js" "^1.7.1"
+    "@storyblok/js" "^1.7.0"
 
 "@swc/helpers@0.4.3":
   version "0.4.3"
@@ -1635,7 +1642,7 @@ source-map-js@^1.0.2:
   resolved "https://registry.yarnpkg.com/source-map-js/-/source-map-js-1.0.2.tgz#adbc361d9c62df380125e7f161f71c826f1e490c"
   integrity sha512-R0XvVJ9WusLiqTCEiGCmICCMplcCkIwwR11mOSD9CR5u+IXYdiseeEuXCVAjS54zqwkLcPNnmU4OeJ6tUrWhDw==
 
-storyblok-js-client@^4.5.6:
+storyblok-js-client@4.5.6, storyblok-js-client@^4.5.6:
   version "4.5.6"
   resolved "https://registry.yarnpkg.com/storyblok-js-client/-/storyblok-js-client-4.5.6.tgz#caab0bb1ead8618f84afcc35be9305883d85e628"
   integrity sha512-S0cXKkEqGDibD32K48FFodjeu/+eF++nrHhrLzo/bKxrnyQiPChPccFAnzsJCQ6uMvRuVGZzjKwM5/sMeBRthg==
