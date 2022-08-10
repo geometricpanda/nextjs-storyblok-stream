@@ -8,6 +8,7 @@ export const getStaticProps = async ({params}) => {
     return {
         props: {
             initialStory: data ? data.story : false,
+            preview: true,
         },
         revalidate: 3600
     }
@@ -24,8 +25,8 @@ export const getStaticPaths = async () => {
     }
 }
 
-const Home = ({initialStory}) => {
-    const story = useStoryblokState(initialStory);
+const Home = ({initialStory, preview}) => {
+    const story = useStoryblokState(initialStory, undefined, preview);
 
     return (
         <>
